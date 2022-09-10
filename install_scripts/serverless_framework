@@ -1,0 +1,3 @@
+
+## Install Serverless Framework
+RUN curl -o- -L https://slss.io/install | bash

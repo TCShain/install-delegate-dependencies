@@ -1,0 +1,5 @@
+
+## Install AWS CLI
+RUN microdnf install python3-pip && \
+    pip3 install awscli --upgrade && \
+    aws --version
