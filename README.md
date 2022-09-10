@@ -11,7 +11,7 @@ Choose from the available dependencies in the `install_scripts` directory by pas
 Example:
 `sh build_delegate_dockerfile.sh "aws_cli serverless_framework"`
 
-Output:
+Example Output:
 
 ```
 > Building Dockerfile with the following dependencies...
