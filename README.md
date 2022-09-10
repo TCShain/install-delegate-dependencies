@@ -6,7 +6,7 @@ This is a simple script to craft a Dockerfile that will install dependencies int
 
 ## Use
 
-Choose from the available dependencies in the `install_scripts` directory by passing them in a set of quoted script paramaters.
+Choose from the available dependencies in the `install_scripts` directory by passing them in a set of quoted, space-separated script paramaters.
 
 The `Dockerfile` will be created in the local directory and the contents will be displayed on screen.
 
