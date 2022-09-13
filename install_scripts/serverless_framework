@@ -3,4 +3,4 @@
 RUN DEBIAN_FRONTEND=noninteractive && \
     microdnf install npm && \
     npm install -g n && \
-    n latest && \
+    n latest
