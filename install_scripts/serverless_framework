@@ -1,3 +1,6 @@
 
 ## Install Serverless Framework
-RUN curl -o- -L https://slss.io/install | bash
+RUN DEBIAN_FRONTEND=noninteractive && \
+    microdnf install npm && \
+    npm install -g n && \
+    n latest && \
