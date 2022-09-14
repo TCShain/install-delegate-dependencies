@@ -12,7 +12,7 @@ The `Dockerfile` will be created in the local directory and the contents will be
 
 **Example**:
 
-`sh build_delegate_dockerfile.sh "aws_cli serverless_framework"`
+`sh create_delegate_dockerfile.sh "aws_cli serverless_framework"`
 
 **Example Output**:
 
