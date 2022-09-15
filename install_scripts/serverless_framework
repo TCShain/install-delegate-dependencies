@@ -1,6 +1,17 @@
 
 ## Install Serverless Framework
 RUN DEBIAN_FRONTEND=noninteractive && \
+    # Install NPM
     microdnf install npm && \
+    # Install latest version of Serverless
+    npm install -g serverless && \
+    ## Install specific versions of serverless
+    mkdir /opt/harness-delegate/slsVersions/v2.50.0
+    npm install serverless && \
+    mkdir /opt/harness-delegate/slsVersions/v3.9.0
+    npm install serverless && \
+    # Install node version manager
     npm install -g n && \
+    ## Install specific version of node
     n latest
+    n 16.17.0
