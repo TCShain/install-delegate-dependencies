@@ -13,7 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     mkdir $sls_path && \
 
     for sv in $sls_versions; do  \ 
-    mkdir $sls_path/$sv; \ 
+    mkdir $sls_path/$sv; \
+    cd $sls_path/$sv; \ 
     npm install serverless@$sv; \ 
     done; \
 
