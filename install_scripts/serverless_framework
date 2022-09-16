@@ -9,9 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     npm install -g serverless  && \ 
     ## Install specific versions of serverless
     sls_versions="v2.50.0 v3.9.0"  && \
-    sls_path= 
+    sls_path="/opt/harness-delegate/slsVersions" 
     for sv in $sls_versions; do  \ 
-    mkdir $sls/$sv; \ 
+    mkdir $sls_path/$sv; \ 
     npm install serverless@$sv; \ 
     done; && \
 
