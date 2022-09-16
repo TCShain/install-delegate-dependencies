@@ -8,18 +8,17 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     # Install latest version of Serverless
     npm install -g serverless  && \ 
     ## Install specific versions of serverless
-    sls_versions="v2.50.0 v3.9.0"  && \ 
+    sls_versions="v2.50.0 v3.9.0"  && \
+    sls_path="/opt/harness-delegate/slsVersions" && \
     for sv in $sls_versions; do  \ 
-    mkdir /opt/harness-delegate/slsVersions/$sv  && \ 
+    mkdir $sls_path/$sv  && \ 
     npm install serverless@$sv; \ 
-    done;
-    # done  && \ 
+    done; && \
 
-    # # Install node version manager
-    # npm install -g n  && \ 
-    # ## Install specific version of node
-    # node_versions="18.9.0 16.17.0"   && \ 
-    # for nv in $node_versions && \ 
-    # do && \ 
-    #     n $nv  && \ 
-    # done
+    # Install node version manager
+    npm install -g n  && \ 
+    ## Install specific version of node
+    node_versions="18.9.0 16.17.0"   && \ 
+    for nv in $node_versions; do \ 
+        n $nv; \ 
+    done;
