@@ -15,13 +15,13 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     for sv in $sls_versions; do  \ 
     mkdir $sls_path/$sv; \ 
     npm install serverless@$sv; \ 
-    done;
+    done; \
 
     # Install node version manager
     npm install -g n  && \ 
     ## Install specific version of node
     node_versions="18.9.0 16.17.0"   && \ 
-    
+
     for nv in $node_versions; do \ 
         n $nv; \ 
     done;
