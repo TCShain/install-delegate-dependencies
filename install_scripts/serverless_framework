@@ -30,8 +30,9 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     #    n $nv; \ 
     #done;
     for nv in $node_versions; do \
-        curl https://nodejs.org/download/release/$nv/node-$nv-linux-x64.tar.gz --output $node_path; \
-        tar -xzf $node_path/$nv; \
+        curl https://nodejs.org/download/release/$nv/node-$nv-linux-x64.tar.gz --output $node_path/$nv.tar.gz; \
+        mkdir $node_path/$nv
+        cd $node_path && tar -xzf $nv.tar.gz -C $nv --strip-components=1; \
     done; \
 
     chown -R 1001:1001 $node_path
