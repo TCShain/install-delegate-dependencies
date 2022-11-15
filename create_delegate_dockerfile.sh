@@ -10,7 +10,7 @@ done
 sleep 2
 
 cat << EOF > pre_template
-FROM harness/delegate-immutable:<+pipeline.variables.delegate-immutalbe-image>
+FROM harness/delegate-immutable:<+pipeline.variables.delegate_immutable_image>
 
 USER root
 EOF
