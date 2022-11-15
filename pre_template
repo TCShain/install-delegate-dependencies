@@ -1,3 +1,0 @@
-FROM harness/delegate-immutable:22.09.76615
-
-USER root
