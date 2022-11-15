@@ -8,28 +8,9 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     # Install latest version of Serverless
     npm install -g serverless  && \ 
     ## Install specific versions of serverless
-    sls_versions="v2.50.0 v3.9.0"  && \
-    sls_path="/opt/harness-delegate/slsVersions" && \
-    mkdir $sls_path && \
+    sls_version="v2.50.0" && \
+    npm install serverless@$sls_version && \
 
-    for sv in $sls_versions; do  \ 
-        mkdir $sls_path/$sv && cd "$_"; \ 
-        npm install serverless@$sv; \ 
-    done; \
-
-    chown -R 1001:1001 $sls_path && \
-
-    # Install node version manager
-    ## Install specific version of node
-    node_versions="v18.9.0 v16.17.0"   && \ 
-    node_path="/opt/harness-delegate/nodeVersions" && \
-    mkdir $node_path && \
-
-    for nv in $node_versions; do \
-        curl https://nodejs.org/download/release/$nv/node-$nv-linux-x64.tar.gz --output $node_path/$nv.tar.gz; \
-        mkdir $node_path/$nv; \
-        cd $node_path && tar -xzf $nv.tar.gz -C $nv --strip-components=1; \
-    done; \
-
-    chown -R 1001:1001 $node_path
-        
+    # Install specific version of node
+    node_version="16.x"   && \ 
+    curl --silent --location https://rpm.nodesource.com/setup_$node_version | bash -       

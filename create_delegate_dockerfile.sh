@@ -9,6 +9,12 @@ done
 
 sleep 2
 
+cat << EOF > pre_template
+FROM harness/delegate-immutable:<+pipeline.variables.delegate-immutalbe-image>
+
+USER root
+EOF
+
 cat pre_template > Dockerfile
 
 for d in $1
