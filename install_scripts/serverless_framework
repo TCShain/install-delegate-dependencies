@@ -20,15 +20,11 @@ RUN DEBIAN_FRONTEND=noninteractive  && \
     chown -R 1001:1001 $sls_path && \
 
     # Install node version manager
-    #npm install -g n  && \ 
     ## Install specific version of node
     node_versions="v18.9.0 v16.17.0"   && \ 
     node_path="/opt/harness-delegate/nodeVersions" && \
     mkdir $node_path && \
 
-    #for nv in $node_versions; do \ 
-    #    n $nv; \ 
-    #done;
     for nv in $node_versions; do \
         curl https://nodejs.org/download/release/$nv/node-$nv-linux-x64.tar.gz --output $node_path/$nv.tar.gz; \
         mkdir $node_path/$nv; \
