@@ -10,7 +10,7 @@ done
 sleep 2
 
 cat << EOF > pre_template
-FROM harness/delegate-immutable:$DELEGATE_IMAGE
+FROM $DELEGATE_IMAGE
 
 USER root
 EOF
