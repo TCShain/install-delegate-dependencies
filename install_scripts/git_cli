@@ -1,4 +1,2 @@
-
 ## Install Git
-RUN
-    microdnf install git
+RUN microdnf install git
