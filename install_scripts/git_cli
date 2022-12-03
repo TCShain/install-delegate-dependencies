@@ -1,0 +1,4 @@
+
+## Install Git
+RUN
+    microdnf install git

@@ -9,6 +9,12 @@ done
 
 sleep 2
 
+cat << EOF > pre_template
+FROM $DELEGATE_IMAGE
+
+USER root
+EOF
+
 cat pre_template > Dockerfile
 
 for d in $1
