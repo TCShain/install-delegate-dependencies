@@ -19,12 +19,15 @@ cat pre_template > Dockerfile
 
 for d in $1
 do
-    is=install_scripts/$d
-    case $d in
-        aws_cli ) cat $is >> Dockerfile;;
-        serverless_framework ) cat $is >> Dockerfile;;
-    esac
+    cat install_scripts/$d >> Dockerfile
 done
+# do
+#     is=install_scripts/$d
+#     case $d in
+#         aws_cli ) cat $is >> Dockerfile;;
+#         serverless_framework ) cat $is >> Dockerfile;;
+#     esac
+# done
 
 cat post_template >> Dockerfile
 
