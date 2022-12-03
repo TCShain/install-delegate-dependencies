@@ -19,7 +19,7 @@ cat pre_template > Dockerfile
 
 for d in $1
 do
-    cat install_scripts/$d >> Dockerfile && echo "\\n" >> Dockerfile
+    cat install_scripts/$d >> Dockerfile && echo -e "\n" >> Dockerfile
 done
 
 cat post_template >> Dockerfile
